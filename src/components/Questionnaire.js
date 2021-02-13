@@ -19,7 +19,7 @@ class Questionnaire extends Component {
     }
 
     handleClick(choice) {
-        if (choice == this.state.dataSet[this.state.current].correct) {
+        if (choice === this.state.dataSet[this.state.current].correct) {
             this.setState(
                 {
                     correct : this.state.correct + 1
@@ -33,7 +33,7 @@ class Questionnaire extends Component {
             )
         }
 
-        if (this.state.current == this.state.dataSet.length - 1) {
+        if (this.state.current === this.state.dataSet.length - 1) {
             this.setState(
                 {
                     isFinished : true
@@ -46,13 +46,13 @@ class Questionnaire extends Component {
                 }
             )
         }
-        if (this.state.correct == 2) {
+        if (this.state.correct === 2) {
             this.setState(
                 {
                     status : "Passed"
                 }
             )
-        } else if (this.state.incorrect == 2) {
+        } else if (this.state.incorrect === 2) {
             this.setState(
                 {
                     status : "Failed"
