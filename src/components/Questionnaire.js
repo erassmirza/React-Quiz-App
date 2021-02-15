@@ -39,23 +39,23 @@ class Questionnaire extends Component {
                     isFinished : true
                 }
             )
+            if (this.state.correct >= 2 || this.state.incorrect <= 1) {
+                this.setState(
+                    {
+                        status : "Passed"
+                    }
+                )
+            } else if (this.state.incorrect >= 2 || this.state.correct <= 1) {
+                this.setState(
+                    {
+                        status : "Failed"
+                    }
+                )
+            }
         } else {
             this.setState(
                 {
                     current : this.state.current + 1
-                }
-            )
-        }
-        if (this.state.correct === 2) {
-            this.setState(
-                {
-                    status : "Passed"
-                }
-            )
-        } else if (this.state.incorrect === 2) {
-            this.setState(
-                {
-                    status : "Failed"
                 }
             )
         }
